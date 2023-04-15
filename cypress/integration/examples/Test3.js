@@ -22,5 +22,18 @@ describe("My Third Test Suite", () => {
       }
     });
     cy.get("#autocomplete").should("have.value", "Egypt");
+
+    // visiblity
+    cy.get("#displayed-text").should("be.visible");
+    cy.get("#hide-textbox").click();
+    cy.get("#displayed-text").should("not.be.visible");
+    cy.get("#show-textbox").click();
+    cy.get("#displayed-text").should("be.visible");
+
+    // radio buttons
+    cy.get(".radioButton[value='radio1']")
+      .should("not.be.checked")
+      .check()
+      .should("be.checked");
   });
 });
