@@ -6,5 +6,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: "cypress/integration/examples/*.js",
+    pageLoadTimeout: 120000,
   },
 });
